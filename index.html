@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Test your geography knowledge with this interactive map quiz game!">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>Map Quiz Game</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+           
+        <div class="wrapper">
+            <main>
+                <div id="intro-section">
+                    <div class="hero-container">
+                        <div class="hero-left">
+                            <h1>Map Quiz Game</h1>
+                            <p class="hero-subtitle">Test your geography knowledge!</p>
+                            <button id="start-game">Start Game</button>
+                        </div>
+                        <div class="hero-right">
+                            <div class="game-intro">
+                                <h2>How to Play</h2>
+                                <div class="instructions-list">
+                                    <ul>
+                                        <li><span class="bullet">➤</span> Click on the map where you think the landmark is located</li>
+                                        <li><span class="bullet">➤</span> Score up to 4,000 points per question based on accuracy</li>
+                                        <li><span class="bullet">➤</span> Get a ✅ for guesses within 100km of the target</li>
+                                        <li><span class="bullet">➤</span> Maximum total score: 20,000 points</li>
+                                        <li><span class="bullet">➤</span> 5 places to locate</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="game-section" style="display:none;">
+                    <div id="question-container">
+                        <div id="question"></div>
+                    </div>
+                    <div id="map"></div>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-label">Distance</div>
+                            <div id="distance" class="stat-value">0 km</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Score</div>
+                            <div id="score" class="stat-value">Points: 0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Progress</div>
+                            <div id="feedback" class="feedback-container stat-value"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
